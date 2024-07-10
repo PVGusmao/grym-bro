@@ -56,6 +56,9 @@ export default function Register() {
       .post("/register", user)
       .then((response) => {
         console.log(response.data)
+        alert("Conta criada com sucesso!")
+
+        router.push("/")
       })
       .catch((error) => {
         console.log(error.response.data)
@@ -79,10 +82,6 @@ export default function Register() {
           complement: "",
           cep: ""
         })
-
-        alert("Conta criada com sucesso!")
-
-        router.push("/")
       })
   }
 
