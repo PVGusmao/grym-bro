@@ -13,7 +13,7 @@ O projeto se trata de uma plataforma voltado para pessoas que gostam e querem po
 ## Passo a passo para utilização (com docker)
     
 1. Crie uma imagem docker utilizando **docker build -t gym-bro-docker .**;
-2. A partir da imagem acima execute o container rodando o comando **docker run -p 5000:3000 gym-bro-docker**;
+2. A partir da imagem acima execute o container rodando o comando **docker run -p 3000:3000 gym-bro-docker**;
 3. Caso queira interagir com o container utiliza o comando **docker exec -it <ID_do_seu_contêiner> bash** passando o id do container gerado no comando acima;
 
 ## Fluxograma da aplicação
