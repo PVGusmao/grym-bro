@@ -12,6 +12,7 @@ import React, { FormEvent, useState } from "react"
 
 export default function Login() {
   const router = useRouter();
+  const {setSavedUser} = useAuthContext();
 
   const [user, setUser] = useState({
     email: "",
@@ -25,6 +26,7 @@ export default function Login() {
       .then((res) => {
         setToken(res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user))
+        setSavedUser(res.data.user)
         router.push('/home')
       })
       .catch((err) => {

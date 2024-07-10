@@ -1,10 +1,11 @@
 'use client'
 
+import { useAuthContext } from "@/context/authContext";
 import React from "react";
 
 export default function Perfil() {
   const [selected, setSelected] = React.useState(0);
-  const [saveUser, setUser] = React.useState(JSON.parse(localStorage.getItem('user') as string));
+  const {savedUser} = useAuthContext();
 
   return (
     <main className="flex flex-col items-center justify-between p-24">
@@ -28,31 +29,31 @@ export default function Perfil() {
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Nome"
-                  value={saveUser?.first_name}
+                  value={savedUser?.first_name}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Sobrenome"
-                  value={saveUser?.last_name}
+                  value={savedUser?.last_name}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Data de Nascimento"
-                  value={saveUser?.birth_date}
+                  value={savedUser?.birth_date}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="CPF"
-                  value={saveUser?.cpf}
+                  value={savedUser?.cpf}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Email"
-                  value={saveUser?.email}
+                  value={savedUser?.email}
                 />
               </> :
               <>
@@ -61,43 +62,43 @@ export default function Perfil() {
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="CEP"
-                  value={saveUser?.cep}
+                  value={savedUser?.cep}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Endereço"
-                  value={saveUser?.address}
+                  value={savedUser?.address}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Estado"
-                  value={saveUser?.state}
+                  value={savedUser?.state}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Cidade"
-                  value={saveUser?.city}
+                  value={savedUser?.city}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Bairro"
-                  value={saveUser?.neighborhood}
+                  value={savedUser?.neighborhood}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Número"
-                  value={saveUser?.number}
+                  value={savedUser?.number}
                 />
                 <input
                   className="w-full max-w-[500px] p-4 text-xl rounded-2xl"
                   disabled
                   placeholder="Complemento"
-                  value={saveUser?.complement}
+                  value={savedUser?.complement}
                 />
               </>
               }
